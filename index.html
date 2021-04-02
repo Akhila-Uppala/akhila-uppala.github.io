@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="w3l_search">
 			<form action="/products.html" method="post">
 				<input type="text" id=  "searchInput" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-				<input type="submit" id= "searchBtn" value="">
+				<input type="button" id= "searchBtn" value="">
 			</form>
 		</div>
 		<div class="product_list_header">  
@@ -635,13 +635,14 @@ $(document).ready(function(){
 
 	</script>
 	<script>
-		let searchbtn11=document.getElementById("searchbtn")
+		let searchbtn11=document.getElementById("searchBtn")
     	searchbtn11.onclick=function(){
-			let search =document.getElementById("searchInput").value;
+			alert("Welcome")
+			let search2 =document.getElementById("searchInput").value;
 		
-			let search={}
-			search.searchKeyWord=search;
-			digitalData.search=search;
+			let search3={}
+			search3.searchKeyWord=search2;
+			digitalData.search=search3;
 			_satellite.track('searchVal');
  
     	}
