@@ -61,8 +61,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="w3l_search">
 			<form action="/products.html" method="post">
-				<input type="text" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
-				<input type="submit" value="">
+				<input type="text" id=  "searchInput" name="Product" value="Search a product..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search a product...';}" required="">
+				<input type="submit" id= "searchBtn" value="">
 			</form>
 		</div>
 		<div class="product_list_header">  
@@ -633,6 +633,18 @@ $(document).ready(function(){
 			}
 		});
 
+	</script>
+	<script>
+		let searchbtn11=document.getElementById("searchbtn")
+    	searchbtn11.onclick=function(){
+			let search =document.getElementById("searchInput").value;
+		
+			let search={}
+			search.searchKeyWord=search;
+			digitalData.search=search;
+			_satellite.track('searchVal');
+ 
+    	}
 	</script>
 	<script src="./js/userID.js"></script>
 </body>
