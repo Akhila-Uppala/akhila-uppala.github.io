@@ -39,17 +39,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					pageName: document.title,
 					pageURL : window.location.href,
 					siteSection :"example site section",
-					},
+					}
+				},
 			user: {
 				userID: "",
 				domain : window.location.hostname,
 				device : navigator.userAgent,
 				date : new Date().toDateString()
-				} 
-			}
+				} ,
+			productEvent: "",
+			product: []
+				
+			
 		 }
 	</script>
-	<script src="./js/userID.js"></script>
+     
+	<!-- <script src="./js/userID.js"></script> -->
     <script src="//assets.adobedtm.com/224be2da76aa/475515bbdb8b/launch-ec5126373de6-development.min.js" async></script>
 </head>
 	
@@ -70,7 +75,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <fieldset>
                     <input type="hidden" name="cmd" value="_cart" />
                     <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
+                    <input type="submit" name="submit" id = "view_cart" value="View your cart" class="button" />
                 </fieldset>
             </form>
 		</div>
@@ -287,8 +292,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="snipcart-item block" >
 										<div class="snipcart-thumb">
 											<a href="single.html" id="first"><img title=" " alt=" " src="images/1.png" /></a>		
-											<p>fortune sunflower oil</p>
-											<h4>$7.99 <span>$10.00</span></h4>
+											<p class= "prodName">fortune sunflower oil</p>
+											<h4 class="prodPrice" value ="10.00">$7.99 <span>$10.00</span></h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
 											<form action="checkout.html" method="post">
@@ -302,7 +307,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" onclick ="test()" name="submit" value="Add to cart" class="button" />
+													<input type="submit" onclick ="addToCart()" name="submit" value="Add to cart"  id = "add_cart" class="button" />
 												</fieldset>
 													
 											</form>
@@ -322,8 +327,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="snipcart-item block" >
 										<div class="snipcart-thumb">
 											<a href="single.html"><img title=" " alt=" " src="images/3.png" /></a>		
-											<p>basmati rise (5 Kg)</p>
-											<h4>$11.99 <span>$15.00</span></h4>
+											<p class="prodName">basmati rise (5 Kg)</p>
+											<h4 class="prodPrice" value ="15.00">$11.99 <span>$15.00</span></h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
 											<form action="#" method="post">
@@ -337,7 +342,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button" onclick ="test()"/>
+													<input type="submit" name="submit" value="Add to cart" class="button"  id = "add_cart" onclick ="test()"/>
 												</fieldset>
 											</form>
 										</div>
@@ -358,8 +363,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
 											<a href="single.html"><img src="images/2.png" alt=" " class="img-responsive" /></a>
-											<p>Pepsi soft drink (2 Ltr)</p>
-											<h4>$8.00 <span>$10.00</span></h4>
+											<p class="prodName">Pepsi soft drink (2 Ltr)</p>
+											<h4 class="prodPrice" value= "8.00">$8.00 <span>$10.00</span></h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
 											<form action="#" method="post">
@@ -373,7 +378,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button" onclick ="test()"/>
+													<input type="submit" name="submit" value="Add to cart" class="button"   id = "add_cart" onclick ="test()"/>
 												</fieldset>
 											</form>
 										</div>
@@ -395,7 +400,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="snipcart-thumb">
 											<a href="single.html"><img src="images/4.png" alt=" " class="img-responsive" /></a>
 											<p>dogs food (4 Kg)</p>
-											<h4>$9.00 <span>$11.00</span></h4>
+											<h4 value= "11.00">$9.00 <span>$11.00</span></h4>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
 											<form action="#" method="post">
@@ -409,7 +414,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<input type="hidden" name="currency_code" value="USD" />
 													<input type="hidden" name="return" value=" " />
 													<input type="hidden" name="cancel_return" value=" " />
-													<input type="submit" name="submit" value="Add to cart" class="button" onclick ="test()"/>
+													<input type="submit" name="submit" value="Add to cart" class="button"   id = "add_cart" onclick ="test()"/>
 												</fieldset>
 											</form>
 										</div>
@@ -647,6 +652,33 @@ $(document).ready(function(){
  
     	}
 	</script>
+<script>
+		
+		let products = document.getElementsByClassName("snipcart-thumb");
+		for(let i=0;i<products.length;i++)
+		{
+			var productName = products[i].children[1].innerHTML
+			var productPrice = products[i].children[2].getAttribute("value")
+
+			var obj = {
+				productID: "4859",
+				productName: productName,
+				description: "Example description",
+				category:"Example Category",
+				quantity: 1,
+				size: "Product size",
+				price :productPrice
+			}
+			console.log(obj)
+			digitalData.product.push(obj)
+		}
+</script>
+<script>
+		 document.getElementById("add_cart").onclick = function() {
+			 digitalData.productEvent = "Product_Add"
+		 }
+</script>
+
 	<script src="./js/userID.js"></script>
 </body>
 </html>
