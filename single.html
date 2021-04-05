@@ -71,7 +71,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script> -->
 
 
-<script type="text/javascript" src="js/datalayer.js"></script>
+<!-- <script type="text/javascript" src="js/datalayer.js"></script> -->
+<script src="./js/productsDL.js"></script>
 <!-- start-smoth-scrolling -->
 <script>
 	//prehiding snippet for Adobe Target with asynchronous Launch deployment
@@ -877,6 +878,23 @@ $(document).ready(function(){
 		});
 
 	</script>
+	<script>
+		let prodName = document.getElementById("charminar").innerHTML;
+		let prodPrice = document.getElementById("cost").innerHTML;
+		console.log(prodName, prodPrice)
+		var obj = {
+				productID: "4859",
+				productName: prodName,
+				description: "product description",
+				category:"food Category",
+				quantity: 1,
+				size: "Product size",
+				price :prodPrice
+			}
+			console.log(obj)
+			digitalData.product.push(obj)
+	</script>
 	<script src="./js/userID.js"></script>
+	
 </body>
 </html>
