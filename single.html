@@ -47,7 +47,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script>
-<script type="text/javascript" src="js/datalayer.js"></script>
+
+<script>
+	var	digitalData = {
+	   page: {
+		   pageInfo: {
+			   pageName: document.title,
+			   pageURL : window.location.href,
+			   siteSection :"example site section",
+			   }
+		   },
+	   user: {
+		   userID: "",
+		   domain : window.location.hostname,
+		   device : navigator.userAgent,
+		   date : new Date().toDateString()
+		   } ,
+	   productEvent: "",
+	   product: []
+		   
+	   
+	}
+</script>
+
+
+<!-- <script type="text/javascript" src="js/datalayer.js"></script> -->
 <!-- start-smoth-scrolling -->
 <script>
 	//prehiding snippet for Adobe Target with asynchronous Launch deployment
@@ -853,5 +877,6 @@ $(document).ready(function(){
 		});
 
 	</script>
+	<script src="./js/userID.js"></script>
 </body>
 </html>
