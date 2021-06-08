@@ -872,5 +872,10 @@ $(document).ready(function(){
 		});
 
 	</script>
+	<script>
+		var prods = JSON.parse(localStorage.getItem('PRODUCTS'))
+		digitalData.product = prods
+		console.log(digitalData)
+	</script>	
 </body>
 </html>

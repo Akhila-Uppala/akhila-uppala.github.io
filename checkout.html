@@ -26,8 +26,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="js/datalayer.js"></script>
+<!-- <script type="text/javascript" src="js/datalayer.js"></script> -->
 <script src="./js/userID.js"></script>
+<script src="./js/productsDL.js"></script>
+
+
 <script src="//assets.adobedtm.com/224be2da76aa/475515bbdb8b/launch-ec5126373de6-development.min.js" async></script></script>
 </head>
 	
@@ -307,8 +310,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</section>
 								</form>
-									<div class="checkout-right-basket">
-				        	<a href="payment.html">Make a Payment <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+									<div class="checkout-right-basket" >
+				        	<a href="payment.html" id="make_payment">Make a Payment <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 			      	</div>
 					</div>
 			
@@ -533,6 +536,23 @@ $(document).ready(function(){
 			}
 		});
 
+	</script>
+	<script>
+		var rand = Math.floor(Math.random() * 100) + 1000;
+		localStorage.setItem('random',rand)
+		console.log(rand)
+		
+	</script>
+<script>
+		var prods = JSON.parse(localStorage.getItem('PRODUCTS'))
+		digitalData.product = prods
+		console.log(digitalData)
+	</script>	
+	<script>
+		document.getElementById("make_payment").onclick = function() {
+			
+			_satellite.track("payment");
+		}
 	</script>
 </body>
 </html>

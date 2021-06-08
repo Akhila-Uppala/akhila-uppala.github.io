@@ -35,10 +35,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="./js/productsDL.js"></script>
      
 	<!-- <script src="./js/userID.js"></script> -->
-    <script src="//assets.adobedtm.com/224be2da76aa/475515bbdb8b/launch-ec5126373de6-development.min.js" async></script>
+	<!-- <script src="//assets.adobedtm.com/224be2da76aa/475515bbdb8b/launch-ec5126373de6-development.min.js" async></script>
+	 -->
+
+
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M5FDXL9');</script>
+	<!-- End Google Tag Manager -->
 </head>
 	
 <body>
+
+
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5FDXL9"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
 <!-- header -->
 	<div class="agileits_header">
 		<div class="w3l_offers">
@@ -650,7 +666,8 @@ $(document).ready(function(){
 				price :productPrice
 			}
 			console.log(obj)
-			digitalData.product.push(obj)
+			digitalData.product.push(obj);
+			localStorage.setItem('PRODUCTS',JSON.stringify(digitalData.product))
 		}
 </script>
 <script>
